@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "organizationId": "org_jaume_marti_aa62c2",
+    "title": "Example Tree",
+    "description": "This tree demonstrates all node types and finality.",
+    "version": "1.0.0",
+    "author": "Certorix AI",
+    "startNodeId": "q_start",
+    "tags": [
+      "example",
+      "tree",
+      "finality"
+    ],
+    "model": "generic",
+    "published": false
+  },
+  "nodes": {
+    "q_start": {
+      "type": "question",
+      "text": "What is your issue?",
+      "options": [
+        {
+          "id": "o_hardware",
+          "text": "Hardware",
+          "nextNodeId": "q_hardware"
+        },
+        {
+          "id": "o_software",
+          "text": "Software",
+          "nextNodeId": "q_software"
+        }
+      ],
+      "defaultOptionId": "o_hardware",
+      "_pos": {
+        "x": 777.5,
+        "y": 80
+      }
+    },
+    "q_hardware": {
+      "type": "question",
+      "text": "Is your hardware issue related to the battery?",
+      "options": [
+        {
+          "id": "o_battery_yes",
+          "text": "Yes",
+          "nextNodeId": "r_battery_replace"
+        },
+        {
+          "id": "o_battery_no",
+          "text": "No",
+          "nextNodeId": "q_hardware_other"
+        }
+      ],
+      "defaultOptionId": "o_battery_yes",
+      "_pos": {
+        "x": 312.5,
+        "y": 290
+      }
+    },
+    "q_software": {
+      "type": "question",
+      "text": "Is your software issue related to the operating system?",
+      "options": [
+        {
+          "id": "o_os_yes",
+          "text": "Yes",
+          "nextNodeId": "r_os_update"
+        },
+        {
+          "id": "o_os_no",
+          "text": "No",
+          "nextNodeId": "q_software_other"
+        }
+      ],
+      "defaultOptionId": "o_os_yes",
+      "_pos": {
+        "x": 1242.5,
+        "y": 290
+      }
+    },
+    "q_hardware_other": {
+      "type": "question",
+      "text": "Is your hardware issue related to the screen?",
+      "options": [
+        {
+          "id": "o_screen_yes",
+          "text": "Yes",
+          "nextNodeId": "r_screen_replace"
+        },
+        {
+          "id": "o_screen_no",
+          "text": "No",
+          "nextNodeId": "r_hardware_other"
+        }
+      ],
+      "defaultOptionId": "o_screen_yes",
+      "_pos": {
+        "x": 545,
+        "y": 500
+      }
+    },
+    "q_software_other": {
+      "type": "question",
+      "text": "Is your software issue related to an application?",
+      "options": [
+        {
+          "id": "o_app_yes",
+          "text": "Yes",
+          "nextNodeId": "r_app_update"
+        },
+        {
+          "id": "o_app_no",
+          "text": "No",
+          "nextNodeId": "r_software_other"
+        }
+      ],
+      "defaultOptionId": "o_app_yes",
+      "_pos": {
+        "x": 1475,
+        "y": 500
+      }
+    },
+    "r_battery_replace": {
+      "type": "result",
+      "text": "Replace the battery.",
+      "result": {
+        "message": "The battery needs to be replaced. Please contact support for further assistance.",
+        "actions": [
+          {
+            "type": "create_ticket",
+            "label": "Create Ticket",
+            "url": "https://example.com/support"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 80,
+        "y": 500
+      }
+    },
+    "r_os_update": {
+      "type": "result",
+      "text": "Update the operating system.",
+      "result": {
+        "message": "The operating system needs to be updated. Please visit our website for the latest version.",
+        "actions": [
+          {
+            "type": "kb_article",
+            "label": "Update Instructions",
+            "url": "https://example.com/update-instructions"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 1010,
+        "y": 500
+      }
+    },
+    "r_screen_replace": {
+      "type": "result",
+      "text": "Replace the screen.",
+      "result": {
+        "message": "The screen needs to be replaced. Please contact support for further assistance.",
+        "actions": [
+          {
+            "type": "create_ticket",
+            "label": "Create Ticket",
+            "url": "https://example.com/support"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 390,
+        "y": 710
+      }
+    },
+    "r_hardware_other": {
+      "type": "result",
+      "text": "Other hardware issue.",
+      "result": {
+        "message": "There is a hardware issue that needs to be addressed. Please contact support for further assistance.",
+        "actions": [
+          {
+            "type": "create_ticket",
+            "label": "Create Ticket",
+            "url": "https://example.com/support"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 700,
+        "y": 710
+      }
+    },
+    "r_app_update": {
+      "type": "result",
+      "text": "Update the application.",
+      "result": {
+        "message": "The application needs to be updated. Please visit our website for the latest version.",
+        "actions": [
+          {
+            "type": "kb_article",
+            "label": "Update Instructions",
+            "url": "https://example.com/update-instructions"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 1320,
+        "y": 710
+      }
+    },
+    "r_software_other": {
+      "type": "result",
+      "text": "Other software issue.",
+      "result": {
+        "message": "There is a software issue that needs to be addressed. Please contact support for further assistance.",
+        "actions": [
+          {
+            "type": "create_ticket",
+            "label": "Create Ticket",
+            "url": "https://example.com/support"
+          }
+        ]
+      },
+      "_pos": {
+        "x": 1630,
+        "y": 710
+      }
+    }
+  }
+}
